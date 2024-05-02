@@ -1,0 +1,61 @@
+
+# backend
+# - name: create directory
+#   ansible.builtin.file:
+#     path: /app
+#     state: directory
+# - name: download backend application
+#   ansible.builtin.get_url:
+#     url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+#     dest: /tmp/backend.zip
+
+# - name: unzip backend code to app
+#   ansible.builtin.unarchive:
+#     src: /tmp/backend.zip
+#     dest: /app
+#     remote_src: yes
+
+
+# front end
+# rm -rf /usr/share/nginx/html/*
+# - name: delete default website
+#   ansible.builtin.file:
+#     path: /usr/share/nginx/html
+#     state: absent    
+
+# - name: delete html directory
+#   ansible.builtin.file:
+#     path: /usr/share/nginx/html
+#     state: directory
+
+# - name: unarchive and download frontend code
+#   ansible.builtin.unarchive:
+#     src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+#     dest: /usr/share/nginx/html
+#     remote_src: yes 
+
+
+
+
+- name: delete app directory
+  ansible.builtin.file:
+    path: "{{app_location}}"
+    state: absent
+
+- name: 
+  ansible.builtin.file:
+    path: "{{app_location}}"
+    state: directory
+
+- name:
+  ansible.builtin.unarchive:
+    src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{component}}-v2.zip
+    dest: "{{app_location}}"
+    remote_src: yes
+
+
+
+
+
+
+
