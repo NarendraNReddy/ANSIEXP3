@@ -11,7 +11,7 @@ tasks:
   amazon.aws.ec2_instance:
     instance type: t2.micro
     name: "{{item}}"
-    security_group: allow-everything
+    security_group: ALLOW2
     image_id: ami-090252cbe067a9e58
     tags:
       Name: "{{item}}"
