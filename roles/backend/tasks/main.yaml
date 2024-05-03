@@ -43,16 +43,16 @@
 #     remote_src: yes
 
 - name: run app pre-req
-tags:
-- deployment
   ansible.builtin.import_role:
     name: common
     tasks_from: app-pre-req
     
+  # ansible.builtin.import_role:
+  #   name: common
+  #   tasks_from: app-pre-req
+    
 
 - name: install npm
-tags:
-- deployment
   ansible.builtin.command: "npm install"
   args:
     chdir: /app
