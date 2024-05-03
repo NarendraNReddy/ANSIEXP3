@@ -46,7 +46,7 @@
   ansible.builtin.import_role:
     name: common
     tasks_from: app-pre-req
-    
+
   # ansible.builtin.import_role:
   #   name: common
   #   tasks_from: app-pre-req
@@ -83,8 +83,6 @@
     daemon_reload: true
 
 - name: start and enabled
-tags:
-- deployment
   ansible.builtin.service:
     name: backend
     state: restarted
