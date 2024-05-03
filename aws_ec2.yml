@@ -1,0 +1,6 @@
+# aws_access_key: AKIA5FTY77BDNJ3AH65Z 
+# aws_secret_key: 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
+
+plugin: amazon.aws.aws_ec2
+regions:
+- us-east-1
