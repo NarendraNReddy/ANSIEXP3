@@ -4,8 +4,8 @@ regions:
 
 keyed_groups:
   - key: tags['Name']
-  prefix: ''
-  parent_group: ''
+    prefix: ''
+    parent_group: ''
 
 filters:
   tag:Name: "backend"
