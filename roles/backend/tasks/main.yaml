@@ -44,7 +44,7 @@
 
 - name: run app pre-req
   tags:
-  - deployment
+  - deployment1
   ansible.builtin.import_role:
     name: common
     tasks_from: app-pre-req
@@ -56,7 +56,7 @@
 
 - name: install npm
   tags:
-  - deployment
+  - deployment1
   ansible.builtin.command: "npm install"
   args:
     chdir: /app
